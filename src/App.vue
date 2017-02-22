@@ -7,8 +7,8 @@
       <article class="container">
         <div class="left-side">
           <ul>
-            <li><router-link to="/book">BOOK</router-link></li>
             <li><router-link to="/movie">MOVIE</router-link></li>
+            <li><router-link to="/book">BOOK</router-link></li>
             <li><router-link to="/music">MUSIC</router-link></li>
           </ul>
         </div>

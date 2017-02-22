@@ -10,6 +10,9 @@ Vue.use(VueResource);
 import book from './component/book.vue'
 import movie from './component/movie.vue'
 import music from './component/music.vue'
+import chinese from './component/book/chinese.vue'
+import english from './component/book/english.vue'
+import statistic from './component/book/statistic.vue'
 
 const router = new VueRouter({
   mode: 'history',
@@ -21,7 +24,21 @@ const router = new VueRouter({
     },
     {
       path: '/book',
-      component: book
+      component: book,
+      children: [
+        {
+          path: 'chinese',
+          component: chinese
+        },
+        {
+          path: 'english',
+          component: english
+        },
+        {
+          path: 'statistic',
+          component: statistic
+        }
+      ]
     },
     {
       path: '/movie',

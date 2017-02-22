@@ -19,7 +19,7 @@
             }
         },
         mounted: function () {
-            this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10',{},{
+            /*this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10',{},{
                 headers: {
 
                 },
@@ -30,7 +30,7 @@
             }, function (response) {
                 console.log(response)
 
-            });
+            });*/
         }
     }
 </script>
