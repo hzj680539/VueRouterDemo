@@ -1,6 +1,6 @@
 <template>
-  <div id="secondcomponent">
-    <h1>Page two.</h1>
+  <div id="movie">
+    <h1>Movie.</h1>
     <a href="">Written by {{author}}</a>
     <ul>
       <li v-for="article in articles">
@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   export default {
     data() {
       return {
@@ -19,15 +19,10 @@
       }
     },
     mounted: function () {
-      this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10',{},{
-        headers: {
-
-        },
-        emulateJSON: true
-      }).then(function (response) {
+      this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10').then( (response) => {
         this.articles = response.data.subjects
         console.dir(this.articles)
-      }, function (response) {
+      }, (response) => {
         console.log(response)
 
       });

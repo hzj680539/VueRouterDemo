@@ -1,6 +1,6 @@
 <template>
-<div id="firstcomponent">
-  <h1>Page one.</h1>
+<div id="book">
+  <h1>Book.</h1>
   <a href="">Written by {{author}}</a>
 </div>
 </template>

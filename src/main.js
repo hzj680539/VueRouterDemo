@@ -7,20 +7,29 @@ Vue.config.debug = true;
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
-import firstcomponent from './component/firstcomponent.vue'
-import secondcomponent from './component/secondcomponent.vue'
+import book from './component/book.vue'
+import movie from './component/movie.vue'
+import music from './component/music.vue'
 
 const router = new VueRouter({
   mode: 'history',
   base: __dirname,
   routes: [
     {
-      path: '/first',
-      component: firstcomponent
+      path: '/',
+      component: movie
     },
     {
-      path: '/second',
-      component: secondcomponent
+      path: '/book',
+      component: book
+    },
+    {
+      path: '/movie',
+      component: movie
+    },
+    {
+      path: '/music',
+      component: music
     }
   ]
 })
