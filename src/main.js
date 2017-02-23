@@ -28,15 +28,18 @@ const router = new VueRouter({
       children: [
         {
           path: 'chinese',
-          component: chinese
+          component: chinese,
+          alias: '/chinese'
         },
         {
           path: 'english',
-          component: english
+          component: english,
+          alias: '/english'
         },
         {
           path: 'statistic',
-          component: statistic
+          component: statistic,
+          alias: '/statistic'
         }
       ]
     },
