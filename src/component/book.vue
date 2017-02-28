@@ -7,6 +7,9 @@
       <li><router-link to="english">English Book</router-link></li>
       <li><router-link to="statistic">Statistic Book</router-link></li>
     </ul>
+    <ul>
+      <li v-for="item in content">{{item.name}}</li>
+    </ul>
   </div>
   <div>
     <router-view></router-view>
@@ -15,7 +18,17 @@
 </template>
 
 <script>
-
+  export default {
+    data () {
+      return {
+        postData: {"cmd":"i5service/common/divisionList","parameters":{"parentId":1,"iToken":"be3f450c-be7b-4d81-bb50-d2e226254723"}},
+        content: []
+      }
+    },
+    mounted: function () {
+      this.ajax(this.postData, data => this.content = data)
+    }
+  }
 </script>
 
 <style lang="less">

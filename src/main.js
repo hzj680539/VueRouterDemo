@@ -13,6 +13,7 @@ import music from './component/music.vue'
 import chinese from './component/book/chinese.vue'
 import english from './component/book/english.vue'
 import statistic from './component/book/statistic.vue'
+import $ from "jquery"
 
 const router = new VueRouter({
   mode: 'history',
@@ -53,6 +54,21 @@ const router = new VueRouter({
     }
   ]
 })
+
+Vue.prototype.ajax = function (postData, callback) {
+  $.ajax({
+    url: "http://api.dev/cgi?"+Math.random(),
+    type: "post",
+    contentType: 'application/json',
+    dataType: "text",
+    data: JSON.stringify(postData)
+  }).done(function (data) {
+    console.info("Response:");
+    let _data = JSON.parse(data)
+    console.dir(_data)
+    callback(_data.response)
+  });
+}
 
 const app = new Vue({
   router: router,
