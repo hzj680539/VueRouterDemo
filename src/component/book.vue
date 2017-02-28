@@ -18,15 +18,23 @@
 </template>
 
 <script>
+  import AjaxHelper from "../AjaxHelper.js"
+  let ajax = new AjaxHelper();
   export default {
     data () {
       return {
-        postData: {"cmd":"i5service/common/divisionList","parameters":{"parentId":1,"iToken":"be3f450c-be7b-4d81-bb50-d2e226254723"}},
+        postData: {
+          cmd: "i5service/common/divisionList",
+          parameters: {
+            parentId: 1,
+            iToken: "be3f450c-be7b-4d81-bb50-d2e226254723"
+          }
+        },
         content: []
       }
     },
     mounted: function () {
-      this.ajax(this.postData, data => this.content = data)
+      ajax.postText("https://api.i5sesol.com/cgi?"+Math.random(),this.postData, data => {this.content = data})
     }
   }
 </script>

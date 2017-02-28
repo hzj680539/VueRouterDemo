@@ -57,7 +57,7 @@ const router = new VueRouter({
 
 Vue.prototype.ajax = function (postData, callback) {
   $.ajax({
-    url: "http://api.dev/cgi?"+Math.random(),
+    url: "https://api.i5sesol.com/cgi?"+Math.random(),
     type: "post",
     contentType: 'application/json',
     dataType: "text",
