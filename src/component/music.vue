@@ -1,39 +1,35 @@
 <template>
-    <div id="movie">
-        <h1>Music.</h1>
-        <a href="">Written by {{author}}</a>
-        <ul>
-            <li v-for="article in articles">
-                {{article.title}}
-            </li>
-        </ul>
-    </div>
+  <div id="movie">
+    <h1>Music.</h1>
+    <a href="">Written by XXXX</a>
+    <ul>
+
+    </ul>
+  </div>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                author: "黄飞鸿",
-                articles: []
-            }
+  export default {
+    data() {
+      return {
+        postData: {
+          cmd: "i5service/common/divisionList",
+          parameters: {
+            parentId: 1,
+            iToken: "be3f450c-be7b-4d81-bb50-d2e226254723"
+          }
         },
-        mounted: function () {
-            /*this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10',{},{
-                headers: {
-
-                },
-                emulateJSON: true
-            }).then(function (response) {
-                this.articles = response.data.subjects
-                console.dir(this.articles)
-            }, function (response) {
-                console.log(response)
-
-            });*/
-        }
+        content: []
+      }
+    },
+    mounted: function () {
+      var vm = this
+      vm.$http.post("https://api.i5sesol.com/cgi?"+Math.random(),vm.postData).then((response) => {
+//        vm.$set('gridData', response.data)
+//        vm.gridData = response.data
+        console.log("CCCC")
+        console.dir(response.data)
+      })
     }
+  }
 </script>
-<style>
-
-</style>
