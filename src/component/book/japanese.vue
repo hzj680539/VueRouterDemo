@@ -1,15 +1,16 @@
 <template>
   <div id="statistic">
-    <h1>Statistic Book</h1>
-    <h1>Statistic Book</h1>
-    <h1>Statistic Book</h1>
-    <h1>Statistic Book</h1>
+    <h1>Japanese Book</h1>
+    <h1>Japanese Book</h1>
+    <h1>Japanese Book</h1>
+    <h1>Japanese Book</h1>
     <ul>
       <li v-for="item in content">{{item.name}}</li>
     </ul>
   </div>
 </template>
 <script type="text/ecmascript-6">
+  import axios from 'axios'
   export default {
     data () {
       return {
@@ -18,7 +19,12 @@
       }
     },
     mounted: function () {
-      this.ajax(this.postData, data => this.content = data)
+//      this.ajax(this.postData, data => this.content = data)
+
+      axios.post("https://api.i5sesol.com/cgi?"+Math.random(),this.postData).then(function (data) {
+        console.log("V7")
+        console.log(data.data.response)
+      })
     }
   }
 </script>

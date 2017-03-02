@@ -6,6 +6,7 @@
       <li><router-link to="chinese">Chinese Book</router-link></li>
       <li><router-link to="english">English Book</router-link></li>
       <li><router-link to="statistic">Statistic Book</router-link></li>
+      <li><router-link to="japanese">Japanese Book</router-link></li>
     </ul>
     <ul>
       <li v-for="item in content">{{item.name}}</li>
@@ -17,7 +18,7 @@
 </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import AjaxHelper from "../AjaxHelper.js"
   let ajax = new AjaxHelper();
   export default {

@@ -13,6 +13,7 @@ import music from './component/music.vue'
 import chinese from './component/book/chinese.vue'
 import english from './component/book/english.vue'
 import statistic from './component/book/statistic.vue'
+import japanese from './component/book/japanese.vue'
 import $ from "jquery"
 
 const router = new VueRouter({
@@ -41,6 +42,11 @@ const router = new VueRouter({
           path: 'statistic',
           component: statistic,
           alias: '/statistic'
+        },
+        {
+          path: 'japanese',
+          component: japanese,
+          alias: '/japanese'
         }
       ]
     },
