@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript" src="https://unpkg.com/vue"></script>
+  <script type="text/javascript" src="https://unpkg.com/vuex"></script>
+  <script type="text/javascript" src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+<h1>Vuex</h1>
+<div id="app">
+  <p>{{ count }}</p>
+  <p>
+    <button @click="increment">+</button>
+    <button @click="decrement">-</button>
+  </p>
+</div>
+<script type="text/babel">
+  const store = new Vuex.Store({
+    state: {
+      count: 0
+    },
+    mutations: {
+      increment: state => state.count++,
+      decrement: state => state.count--
+    }
+  })
+  const app = new Vue({
+    el: '#app',
+    /*data () {
+      return {
+        count: store.state.count
+      }
+    },*/
+    computed: {
+      count () {
+        return store.state.count
+      }
+    },
+    methods: {
+      increment(){
+        store.commit('increment')
+      },
+      decrement(){
+        store.commit('decrement')
+      }
+    }
+  })
+</script>
+</body>
+</html>
