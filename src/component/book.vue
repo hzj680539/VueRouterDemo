@@ -3,10 +3,10 @@
   <h1>Book.</h1>
   <div class="books">
     <ul>
-      <li><router-link to="chinese">Chinese Book</router-link></li>
-      <li><router-link to="english">English Book</router-link></li>
-      <li><router-link to="statistic">Statistic Book</router-link></li>
-      <li><router-link to="japanese">Japanese Book</router-link></li>
+      <li><router-link to="/book/chinese">Chinese Book</router-link></li>
+      <li><router-link to="/book/english">English Book</router-link></li>
+      <li><router-link to="/book/statistic">Statistic Book</router-link></li>
+      <li><router-link to="/book/japanese">Japanese Book</router-link></li>
     </ul>
     <ul>
       <li v-for="item in content">{{item.name}}</li>

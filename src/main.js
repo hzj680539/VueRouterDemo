@@ -22,6 +22,10 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
+      redirect: '/movie'
+    },
+    {
+      path: '/movie',
       component: movie
     },
     {
@@ -29,24 +33,29 @@ const router = new VueRouter({
       component: book,
       children: [
         {
+          path: '',
+          component: chinese
+          // alias: '/chinese'
+        },
+        {
           path: 'chinese',
-          component: chinese,
-          alias: '/chinese'
+          component: chinese
+          // alias: '/chinese'
         },
         {
           path: 'english',
-          component: english,
-          alias: '/english'
+          component: english
+          // alias: '/english'
         },
         {
           path: 'statistic',
-          component: statistic,
-          alias: '/statistic'
+          component: statistic
+          // alias: '/statistic'
         },
         {
           path: 'japanese',
-          component: japanese,
-          alias: '/japanese'
+          component: japanese
+          // alias: '/japanese'
         }
       ]
     },
